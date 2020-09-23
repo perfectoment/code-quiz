@@ -12,6 +12,8 @@ var button1 = document.getElementById("btn1");
 var button2 = document.getElementById("btn2");
 var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
+// var time = document.getElementById("time");
+// var mainEl = document.getElementById("main");
 
 let questions = [
     {
@@ -38,19 +40,20 @@ let questions = [
 
 /*EVETN LISTENERS */
 
-//this is when user answers question
-strtButton.addEventListener("click", function() {
-    startContainer.setAttribute("class", "hide");
-    initalsContainer.setAttribute("class", "hide");
-    questionsContainer.setAttribute("class", "card text-center"); 
-}
+
+// strtButton.addEventListener("click", function() {
+//     startContainer.setAttribute("class", "hide");
+//     initalsContainer.setAttribute("class", "hide");
+//     questionsContainer.setAttribute("class", "card text-center"); 
+// }
 
     
-)
+// )
 button1.addEventListener("click", function () {
     console.log("Tripped!")
-        currentQuestion++
-        showCurrentQuestion()
+    // if(button1.textContent == questions.answer
+    currentQuestion++
+    showCurrentQuestion()
     }
 )
 button2.addEventListener("click", function () {
@@ -68,7 +71,7 @@ button4.addEventListener("click", function () {
     showCurrentQuestion()
 })
 
-  var counter = 0
+
 /*FUNCTIONS */
 function showCurrentQuestion() {
     let question = questions[currentQuestion];
@@ -77,7 +80,7 @@ function showCurrentQuestion() {
     button2.textContent = question.choices[1];
     button3.textContent = question.choices[2];
     button4.textContent = question.choices[3];
-
+    
     
      
     console.log(question)
@@ -85,14 +88,48 @@ function showCurrentQuestion() {
 // }
        
       
-
+// var secondsLeft = 60;
 /*ENTRY POINT */
 function start() {
-    //start the timer
+    strtButton.addEventListener("click", function() {
+        startContainer.setAttribute("class", "hide");
+        initalsContainer.setAttribute("class", "hide");
+        questionsContainer.setAttribute("class", "card text-center"); 
 
-    //hide some text from landing page
+    }
+    )
+    strtButton.addEventListener("click", function() {
+    var secondsLeft = 60;
+    var time = document.getElementById("time");
+    var mainEl = document.getElementById("main");
+    
+    // strtButton.addEventListener("click", start); {
 
-    //show first question
+        var timerInterval = setInterval(function() {
+            secondsLeft--;
+            time.textContent = secondsLeft + " seconds left ";
+        
+            if(secondsLeft === 0) {
+              clearInterval(timerInterval);
+              sendMessage();
+            }
+        
+          }, 1000);
+        // }
+        
+        function sendMessage() {
+          time.textContent = " ";
+        
+          var imgEl = document.createElement("img");
+        
+          imgEl.setAttribute("src", "images/image_1.jpg");
+          mainEl.appendChild(imgEl);
+     }
+    }
+    )}
+    // }
+    
     showCurrentQuestion()
-}
+
+
 start()
