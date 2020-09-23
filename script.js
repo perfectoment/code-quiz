@@ -14,6 +14,7 @@ var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
 // var time = document.getElementById("time");
 // var mainEl = document.getElementById("main");
+var secondsLeft = 0;
 var correctCounter ={}
 
 let questions = [
@@ -48,15 +49,18 @@ let questions = [
 //     questionsContainer.setAttribute("class", "card text-center"); 
 // }
 
-    
+let question = questions[currentQuestion];
 // )
 button1.addEventListener("click", function () {
     console.log("Tripped!")
-    if(questions.choices[currentQuestion][0] == questions.answer[currentQuestion][0]){
+    if(question.choices[0] = question.answer[0]){
         currentQuestion++
         showCurrentQuestion()
     }
-    else() {
+    else{
+         secondsLeft = -10
+         currentQuestion++
+         showCurrentQuestion()
     }
 })
 button2.addEventListener("click", function () {
@@ -120,16 +124,10 @@ function start() {
           }, 1000);
         // }
         
-        function sendMessage() {
-          time.textContent = " ";
-        
-          var imgEl = document.createElement("img");
-        
-          imgEl.setAttribute("src", "images/image_1.jpg");
-          mainEl.appendChild(imgEl);
+     
      }
-    }
     )}
+    
     // }
     
     showCurrentQuestion()

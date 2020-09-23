@@ -10,35 +10,42 @@
     <link rel="stylesheet" href="style.css"> 
     <title>Quiz Game!</title>
   </head>
-  <body class = "bg secondary">
-    <div class="jumbotron">
-        <h1 class="display-4">TIME</h1>
+  <body class = "bg-secondary position-relative">
+    <div class="jumbotron py-1">
+        <h1 class ="score float-right">Your Score Here</h1>
+        <h1 class="display-3">TIME</h1>
         <p class="lead time" id="time"> Timer Start</p>
+        <!-- <h1 class ="score float-right">Your Score Here</h1> -->
         <hr class="my-4">
+    </div>
     <div class="card text-center" id = "start-card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Start Game</h5>
+        <div class="card-body bg-light">
+          <h5 class="card-title">Start Quiz</h5>
           <button id="start-btn" class="start-btn btn">Start</button>
         </div>
-      </div>
-      <div class="card text-center hide" id="questions-card" style="width: 18rem;">
+    </div>
+    <div class="card text-center hide position-absolute" id="questions-card" style="width: 18rem;">
         <div class="card-body">
-            <div class="title">QUIZ</div>
-            <div id="question">Question</div>
+
+            <h1 class="title bg-warning">SHOW ME WHAT YOU GOT</h1>
+            <h3 id="question">Question</h3>
             <div id="answer-buttons" class =btn-grid></div>
-                <button id="btn1" class ="btn-answers">Answer1</button>
-                <button id="btn2" class ="btn-answers">Answer2</button>
-                <button id="btn3" class ="btn-answers">Answer3</button>
-                <button id="btn4" class ="btn-answers">Answer4</button>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div class = "row">
+                    <div class = "col md">
+                        <button id="btn1" class ="btn-answers">Answer1</button>
+                        <button id="btn2" class ="btn-answers">Answer2</button>
+                        <button id="btn3" class ="btn-answers">Answer3</button>
+                        <button id="btn4" class ="btn-answers">Answer4</button>
+                    </div>
+                </div>
         </div>
-      </div>
-      <div class="card text-center hide" id="initals-card" style="width: 18rem;">
+    </div>
+    <div class="card text-center hide position-absolute" id="initals-card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         </div>
-      </div>
+    </div>
             <!-- <div class="title">QUIZ</div>
             <div id="question">Question</div>
             <div id="answer-buttons" class =btn-grid></div>
@@ -55,4 +62,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body class= "bg-secondary">
+  <footer class = "bg-dark bottom-fixed"></footer>
 </html>
