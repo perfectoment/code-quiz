@@ -2,12 +2,16 @@
 let currentQuestion = 0
 
 //this div is a container around the answers
-let answers = document.querySelector(".answers");
+let answers = document.getElementById("answers");
 var questionsDisplay = document.getElementById("question");
 var startContainer = document.getElementById("start-card");
 let questionsContainer = document.getElementById("questions-card");
-var initalsContainer = document.getElementById("initials-card");
+var initalsContainer = document.getElementById("initals-card");
 var strtButton = document.querySelector(".start-btn");
+var button1 = document.getElementById("btn1");
+var button2 = document.getElementById("btn2");
+var button3 = document.getElementById("btn3");
+var button4 = document.getElementById("btn4");
 
 let questions = [
     {
@@ -38,32 +42,49 @@ let questions = [
 strtButton.addEventListener("click", function() {
     startContainer.setAttribute("class", "hide");
     initalsContainer.setAttribute("class", "hide");
-    questionsContainer.setAttribute("class", "none"); 
+    questionsContainer.setAttribute("class", "card text-center"); 
 }
 
     
 )
-answers.addEventListener("click", function (event) {
+button1.addEventListener("click", function () {
     console.log("Tripped!")
-    if (event.target.tagName === "BUTTON") {
-        //check if answer is correct
-        //-> event.target.textContent === ?
-
-        //show the next question
         currentQuestion++
         showCurrentQuestion()
     }
+)
+button2.addEventListener("click", function () {
+    currentQuestion++
+    showCurrentQuestion()
 })
 
+button3.addEventListener("click", function () {
+    currentQuestion++
+    showCurrentQuestion()
+})
+
+button4.addEventListener("click", function () {
+    currentQuestion++
+    showCurrentQuestion()
+})
+
+  var counter = 0
 /*FUNCTIONS */
 function showCurrentQuestion() {
     let question = questions[currentQuestion];
     questionsDisplay.textContent = question.title;
-    
+    button1.textContent = question.choices[0];
+    button2.textContent = question.choices[1];
+    button3.textContent = question.choices[2];
+    button4.textContent = question.choices[3];
+
     
      
     console.log(question)
 }
+// }
+       
+      
 
 /*ENTRY POINT */
 function start() {
