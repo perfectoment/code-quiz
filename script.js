@@ -2,8 +2,12 @@
 let currentQuestion = 0
 
 //this div is a container around the answers
-let answers = document.querySelector(".answers")
-var questionsDisplay = document.getElementById("question")
+let answers = document.querySelector(".answers");
+var questionsDisplay = document.getElementById("question");
+var startContainer = document.getElementById("start-card");
+let questionsContainer = document.getElementById("questions-card");
+var initalsContainer = document.getElementById("initials-card");
+var strtButton = document.querySelector(".start-btn");
 
 let questions = [
     {
@@ -31,6 +35,14 @@ let questions = [
 /*EVETN LISTENERS */
 
 //this is when user answers question
+strtButton.addEventListener("click", function() {
+    startContainer.setAttribute("class", "hide");
+    initalsContainer.setAttribute("class", "hide");
+    questionsContainer.setAttribute("class", "none"); 
+}
+
+    
+)
 answers.addEventListener("click", function (event) {
     console.log("Tripped!")
     if (event.target.tagName === "BUTTON") {
@@ -47,6 +59,9 @@ answers.addEventListener("click", function (event) {
 function showCurrentQuestion() {
     let question = questions[currentQuestion];
     questionsDisplay.textContent = question.title;
+    
+    
+     
     console.log(question)
 }
 
