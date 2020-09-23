@@ -14,6 +14,7 @@ var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
 // var time = document.getElementById("time");
 // var mainEl = document.getElementById("main");
+var correctCounter ={}
 
 let questions = [
     {
@@ -51,11 +52,13 @@ let questions = [
 // )
 button1.addEventListener("click", function () {
     console.log("Tripped!")
-    // if(button1.textContent == questions.answer
-    currentQuestion++
-    showCurrentQuestion()
+    if(questions.choices[currentQuestion][0] == questions.answer[currentQuestion][0]){
+        currentQuestion++
+        showCurrentQuestion()
     }
-)
+    else() {
+    }
+})
 button2.addEventListener("click", function () {
     currentQuestion++
     showCurrentQuestion()
