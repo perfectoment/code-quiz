@@ -12,30 +12,29 @@
   </head>
   <body class = "bg-secondary position-relative">
     <div class="jumbotron py-1">
-        <h1 class ="score float-right">Your Score Here</h1>
-        <h1 class="display-3">TIME</h1>
-        <p class="lead time" id="time"> Timer Start</p>
+        <h1 class="display-3 font-weight-bold font-arial">JAVASCRIPT QUIZ: ARE YOU TOUGH ENOUGH?!?!</h1>
+        <p class="lead time text-danger font-weight-bold" id="time"> Timer Start</p>
         <!-- <h1 class ="score float-right">Your Score Here</h1> -->
         <hr class="my-4">
     </div>
     <div class="card text-center" id = "start-card" style="width: 18rem;">
         <div class="card-body bg-light">
           <h5 class="card-title">Start Quiz</h5>
-          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="start-btn" class="start-btn btn btn-danger">I'm Ready!</button>
         </div>
     </div>
     <div class="card text-center hide position-absolute" id="questions-card" style="width: 18rem;">
         <div class="card-body">
 
-            <h1 class="title bg-warning">SHOW ME WHAT YOU GOT</h1>
+            <h1 class="title bg-warning">SHOW ME WHAT YOU GOT!</h1>
             <h3 id="question">Question</h3>
             <div id="answer-buttons" class =btn-grid></div>
                 <div class = "row">
                     <div class = "col md">
-                        <button id="btn1" class ="btn-answers">Answer1</button>
-                        <button id="btn2" class ="btn-answers">Answer2</button>
-                        <button id="btn3" class ="btn-answers">Answer3</button>
-                        <button id="btn4" class ="btn-answers">Answer4</button>
+                        <button id="btn1" class ="btn-answers btn-danger">Answer1</button>
+                        <button id="btn2" class ="btn-answers btn-danger">Answer2</button>
+                        <button id="btn3" class ="btn-answers btn-danger">Answer3</button>
+                        <button id="btn4" class ="btn-answers btn-danger">Answer4</button>
                     </div>
                 </div>
         </div>

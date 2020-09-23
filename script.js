@@ -12,7 +12,7 @@ var button1 = document.getElementById("btn1");
 var button2 = document.getElementById("btn2");
 var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
-var secondsLeft = 60;
+var secondsLeft = 40;
 var correctCounter = 0;
 
 let questions = [
@@ -23,8 +23,8 @@ let questions = [
     },
     {
         title: "Choose the correct JavaScript syntax to change the content of the following HTML code.",
-        choices: ["document.getElement(“geek”).innerHTML","document.getElementById(“geek”).innerHTML","document.getId(“”)","document.getElementById(“geek”).innerHTML"],
-        answer: "document.getElementById(“geek”).innerHTML",
+        choices: ["document.getElement(“”).innerHTML","document.getElementById(“”).innerHTML","document.getId(“”)","document.getElementById(“geek”).innerHTML"],
+        answer: "document.getElementById(“”).innerHTML",
     },
     {
         title: "What is the correct syntax for referring to an external script called “script.js”?",
@@ -53,8 +53,10 @@ function questionChecker (event) {
          currentQuestion++;
          showCurrentQuestion();
     }
+    
+    }
 
-}
+
 
 // strtButton.addEventListener("click", function() {
 //     startContainer.setAttribute("class", "hide");
@@ -72,16 +74,17 @@ button4.addEventListener("click", questionChecker);
 
 /*FUNCTIONS */
 function showCurrentQuestion() {
-    //   if(question.choices > 4)  {
+    // 
         let question = questions[currentQuestion];
         questionsDisplay.textContent = question.title;
         button1.textContent = question.choices[0];
         button2.textContent = question.choices[1];
         button3.textContent = question.choices[2];
         button4.textContent = question.choices[3];
-    
-    
+
       }
+    
+
     //   else{        
     //     startContainer.setAttribute("class", "hide");
     //     initalsContainer.setAttribute("class", "card text-center position-absolute");
@@ -104,7 +107,7 @@ function start() {
     }
     )
     strtButton.addEventListener("click", function() {
-    secondsLeft = 60;
+    secondsLeft = 45;
     var time = document.getElementById("time");
     // var mainEl = document.getElementById("main");
     
@@ -114,9 +117,11 @@ function start() {
             secondsLeft--;
             time.textContent = secondsLeft + " seconds left ";
         
-            if(secondsLeft === 0) {
+            if(secondsLeft === 0 || currentQuestion > 3) {
               clearInterval(timerInterval);
-              sendMessage();
+              startContainer.setAttribute("class", "hide");
+              initalsContainer.setAttribute("class", "card text-center");
+              questionsContainer.setAttribute("class", "hide"); 
             }
         
           }, 1000);
@@ -125,6 +130,12 @@ function start() {
      
      }
     )}
+
+
+function highScores(){
+
+    
+}
     
     // }
     
