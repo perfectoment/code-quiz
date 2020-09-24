@@ -112,12 +112,6 @@ function start() {
      }
     )}
 
-
-
-
-
-// renderTodos();
-
 function renderTodos() {
   funhaus.textContent = "";
 
@@ -146,18 +140,6 @@ highscore.addEventListener("click", function(event) {
 
   renderTodos();
 });
-
-// var highscore = document.getElementById("highscore");
-// var nameDisplay = []
-// var submitForm = document.getElementById("submitForm");
-// var funhaus = document.getElementById("funhaus");
-
-    
- 
-    
-    
-
-    
 
     
     showCurrentQuestion()
