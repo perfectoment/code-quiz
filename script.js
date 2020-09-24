@@ -14,7 +14,8 @@ var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
 var secondsLeft = 40;
 var correctCounter = 0;
-var score = document.getElementById("score");
+// var score = document.getElementById("score");
+var submitName = document.getElementById("highscore");
 
 let questions = [
     {
@@ -43,19 +44,18 @@ let questions = [
 function questionChecker (event) {
     var textPuller = event.target.textContent;
     if(textPuller === questions[currentQuestion].answer){
-        currentQuestion++;
         correctCounter++;
+        currentQuestion++;
         showCurrentQuestion();
         console.log(correctCounter)
-        
-        
-    }
+        }
     else{
-         secondsLeft = (secondsLeft - 10);
-         currentQuestion++;
-         showCurrentQuestion();
+        secondsLeft = (secondsLeft - 10); 
+        currentQuestion++;
+        showCurrentQuestion();
+        
     }
-    score.textContent = "Your Score Is: " + toString(correctCounter);
+    document.getElementById("score").innerText = "Your Score Is: " + correctCounter;
     }
 
 button1.addEventListener("click", questionChecker);
@@ -73,7 +73,7 @@ function showCurrentQuestion() {
         button2.textContent = question.choices[1];
         button3.textContent = question.choices[2];
         button4.textContent = question.choices[3];
-
+        
       }
     
 /*ENTRY POINT */
@@ -93,12 +93,12 @@ function start() {
             secondsLeft--;
             time.textContent = secondsLeft + " seconds left ";
         
-            if(secondsLeft === 0 || currentQuestion > 3) {
+            if(secondsLeft === 0 || currentQuestion === questions.length) {
               clearInterval(timerInterval);
               startContainer.setAttribute("class", "hide");
               initalsContainer.setAttribute("class", "card text-center");
               questionsContainer.setAttribute("class", "hide");
-              
+            
               
             }
         
@@ -111,7 +111,7 @@ function start() {
 
 
 function highScores(){
-   
+ 
 }
     
 
