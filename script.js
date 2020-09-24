@@ -15,7 +15,10 @@ var button4 = document.getElementById("btn4");
 var secondsLeft = 40;
 var correctCounter = 0;
 // var score = document.getElementById("score");
-var submitName = document.getElementById("highscore");
+var highscore = document.getElementById("highscore");
+var nameDisplay = []
+var submitForm = document.getElementById("submitForm");
+var funhaus = document.getElementById("funhaus");
 
 let questions = [
     {
@@ -110,9 +113,50 @@ function start() {
     )}
 
 
-function highScores(){
- 
+
+
+
+// renderTodos();
+
+function renderTodos() {
+  funhaus.textContent = "";
+
+  // Render a new li for each todo
+  for (var i = 0; i < nameDisplay.length; i++) {
+    var todo = nameDisplay[i];
+
+    var li = document.createElement("li");
+    li.textContent = todo;
+    funhaus.appendChild(li);
+  }
 }
+
+// When form is submitted...
+highscore.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var Text = submitForm.value.trim();
+
+  if (Text === "") {
+    return;
+  }
+
+  nameDisplay.push(Text + " " + correctCounter);
+  submitForm.value = "";
+
+  renderTodos();
+});
+
+// var highscore = document.getElementById("highscore");
+// var nameDisplay = []
+// var submitForm = document.getElementById("submitForm");
+// var funhaus = document.getElementById("funhaus");
+
+    
+ 
+    
+    
+
     
 
     
