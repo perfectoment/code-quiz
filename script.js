@@ -14,6 +14,7 @@ var button3 = document.getElementById("btn3");
 var button4 = document.getElementById("btn4");
 var secondsLeft = 40;
 var correctCounter = 0;
+var score = document.getElementById("score");
 
 let questions = [
     {
@@ -40,32 +41,23 @@ let questions = [
 
 /*EVETN LISTENERS */
 function questionChecker (event) {
-    console.log("Tripped!")
     var textPuller = event.target.textContent;
     if(textPuller === questions[currentQuestion].answer){
         currentQuestion++;
         correctCounter++;
-        showCurrentQuestion()
-        console.log(correctCounter);
+        showCurrentQuestion();
+        console.log(correctCounter)
+        
+        
     }
     else{
          secondsLeft = (secondsLeft - 10);
          currentQuestion++;
          showCurrentQuestion();
     }
-    
+    score.textContent = "Your Score Is: " + toString(correctCounter);
     }
 
-
-
-// strtButton.addEventListener("click", function() {
-//     startContainer.setAttribute("class", "hide");
-//     initalsContainer.setAttribute("class", "hide");
-//     questionsContainer.setAttribute("class", "card text-center"); 
-// }
-
-// let question = questions[currentQuestion];
-// )
 button1.addEventListener("click", questionChecker);
 button2.addEventListener("click", questionChecker);
 button3.addEventListener("click", questionChecker);
@@ -84,19 +76,6 @@ function showCurrentQuestion() {
 
       }
     
-
-    //   else{        
-    //     startContainer.setAttribute("class", "hide");
-    //     initalsContainer.setAttribute("class", "card text-center position-absolute");
-    //     questionsContainer.setAttribute("class", "hide"); 
-
-    //   }
-    console.log(question)
-
-// }
-       
-      
-// var secondsLeft = 60;
 /*ENTRY POINT */
 function start() {
     strtButton.addEventListener("click", function() {
@@ -109,9 +88,6 @@ function start() {
     strtButton.addEventListener("click", function() {
     secondsLeft = 45;
     var time = document.getElementById("time");
-    // var mainEl = document.getElementById("main");
-    
-    // strtButton.addEventListener("click", start); {
 
         var timerInterval = setInterval(function() {
             secondsLeft--;
@@ -121,11 +97,13 @@ function start() {
               clearInterval(timerInterval);
               startContainer.setAttribute("class", "hide");
               initalsContainer.setAttribute("class", "card text-center");
-              questionsContainer.setAttribute("class", "hide"); 
+              questionsContainer.setAttribute("class", "hide");
+              
+              
             }
         
           }, 1000);
-        // }
+ 
         
      
      }
@@ -133,11 +111,10 @@ function start() {
 
 
 function highScores(){
-
-    
+   
 }
     
-    // }
+
     
     showCurrentQuestion()
 
